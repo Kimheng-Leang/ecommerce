@@ -1,0 +1,393 @@
+/*                  Structure of Homepage Assignment
+    table
+        tr
+          td
+        tr
+          td 
+        tr
+          td 
+            table 
+                 tr
+                   td
+                   td
+                     table
+                          tr
+                            td
+                              table 
+                                  tr 
+                                    td
+                                    td
+                          tr
+                            td
+                          tr
+                            td
+*/
+/* Set the first table*/
+#layout{
+    width: 100%;
+}
+/* for the first td , we have a background , size , min-width*/
+#Td1{
+    background-size: 100%;
+    background-image: url('../images/Cloths-bc740630f228713e4bb0de8a7bffce22.png');
+    min-width: 300px;
+    
+}
+/* for tag h1 that has id=vaule2 (AwesomeShop) , we need to display inline block because elements below it come inline */
+h1#value2{
+    display: inline-block;
+    padding-left: 10%;
+    padding-top: 10%;
+    max-width: 0px;
+    margin: 0;
+}
+/* for tag span that has id=value3 (? Need Help), we need to have a space between (AwesomeShop and Join) */
+span#value3{
+   padding-left: 70%;
+   padding-right: 2%;
+}
+/* for tag span element tag a (click link) that have id=value3 (? Need Help) , to change color from blue to black and remove the line under of it*/
+span#value3 a{
+    color: black;
+    text-decoration: none;
+}
+/*for tag td has id=td1 element input , to make user can click on it*/
+td#td1 input{
+    padding: 5px;
+}
+/*for tag span has id=SetcolorShop, to change color (Shop) to blue*/
+span#SetcolorShop{
+    color: blue;
+}
+/* for tag div has id=value3,to make a paragrah to center of the table*/
+div#value3{
+    text-align: center;
+    padding-top: 10%;
+}
+/* for tag div has id=value3 element span , to change font and size  */
+div#value3 span{
+    font-style: italic;
+    font-size: 50px;
+}
+/* for tag div has id=value3 element p , to change font ,color and size  */
+div#value3 p{
+    font-size: 25px;
+    font-style: italic;
+    color: rgb(99, 96, 96);
+    margin: 0;
+}
+/* for tag div has id=Input-icon element  i , to make it go inside box search */
+div#Input-icon i{
+    position: relative;
+    left: 30px;
+}
+/* for tag div has id=Input-icon, to move direction  */
+div#Input-icon{
+    padding-top: 10%;
+    padding-bottom: 15%;
+    margin-bottom: 0;
+}
+/* for tag input has id=sizebox, to make size of box */
+input#sizebox{
+    width: 50%;
+    font-size: 20px;
+    border-color: black;
+    padding: 5px;
+    border-radius: 15px 15px 15px 15px;
+}
+/* for tag img has id=SetImg1 , to make background color ,set size , have border*/
+img#SetImg1{
+    width: 5%;
+    padding-left: 25%;
+    padding-top:2% ;
+    padding-bottom: 4%;
+    padding-right: 1%;
+    background-color: orange;
+    border: 2px solid black;
+    margin-top: 2%;
+    margin-left: 1%;
+    margin-right: 1%;
+
+}
+/* for tag img has id=SetImg2 , to make background color ,set size , have border*/
+img#SetImg2{
+    width: 5%;
+    background-color: blue;
+    padding-top: 2%;
+    padding-bottom: 4%;
+    padding-left: 25%;
+    padding-right: 1%;
+    border: 2px solid black;
+    margin-right: 1%;
+    margin-top: 2%;
+    margin-left: 1%;
+
+}
+/* for tag img has id=SetImg3 , to make background color ,set size , have border*/
+img#SetImg3{
+    width: 5%;
+    padding-top: 2%;
+    padding-bottom: 4%;
+    padding-right: 1%;
+    background-color: brown;
+    padding-left: 25%;
+    border: 2px solid black;
+    margin-top: 2%;
+    margin-left: 1%;
+}
+/* for tag span has class=class1 , to change color to white and move it into img with background*/
+span.class1{
+    position: absolute;
+    color: white;
+    padding-left: 30px;
+    padding-top: 2%;
+}
+/* for tag span has class=class1 element input,to allow user can click on it */
+span.class1 input{
+    padding: 10px;
+    background-color: white;
+    border: 3px solid black;
+}
+/* Set the second table*/
+#layout1{
+    width: 100%;
+    padding-top: 5%;
+}
+/* for tag td has id=Td3 ,first row of the second table, to move it to the top of table and size 20%  */
+td#Td3{
+    width: 20%;
+    vertical-align: top;
+    padding-top: 2%;
+}
+/* for tag td has id=Td3 element img, to set size of img */
+td#Td3 img{
+    width: 20%;
+    padding-left: 2%;
+    padding-bottom: 10%;
+}
+/* for tag td has id=Td3 element h3, to move it to the top of table and element display inline  */
+td#Td3 h3{
+    display: inline-block;
+    vertical-align: top;
+    margin-bottom: 0;
+    padding-left: 2%;
+    padding-top: 1%;
+}
+/* for tag td has id=Td4 ,second row of the second table, we set size and have background color*/
+td#Td4{
+    width: 80%;
+    background-color: rgb(225, 228, 228);
+}
+/* Set the third table */
+#layout2{
+    width: 100%;
+    padding-top: 2%;
+    padding-left: 2%;
+    padding-right: 2%;
+}
+/* Set the fourth table */
+#layout3{
+    width: 100%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+/* Set border for td has id=Td7*/
+#Td7{
+    border: 3px solid black;
+}
+/* Set border right , row 1 of table's 4 th */
+#Td5{
+    width: 50%;
+    border-right: 2px solid rgb(150, 147, 147);
+    vertical-align: top;
+}
+/* Set width of img */
+#img1{
+    width: 50%;
+    padding-left: 25%;
+}
+/* for tag span has class=class2 (20%) , move to the of top the img , background color yellow */
+span.class2{
+    vertical-align: top;
+    padding: 2%;
+    border-radius: 20%;
+    background-color: yellow;
+    position: relative;
+    top: 5px;
+    left: 50px;
+    font-size: 1rem;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+/* for tag div has class=class3, to display inline */
+div.class3{
+    display: flex;
+    padding-left: 10%;
+}
+/* for tag div has class=class3 element ing, set size and border */
+div.class3 img{
+    width: 60%;
+    border: 5px solid  rgb(150, 147, 147);
+}
+/* for tag td has id=Td6 , move it to top of table and set size , row 2 of table's 4th */
+td#Td6{
+    width: 50%;
+    vertical-align: top;
+}
+/* for tag dav has id=Div2 , display inline*/
+div#Div2{
+    display: flex;
+}
+/* for tag dav has id=Div3 , set space*/
+div#Div3{
+    padding-left: 5%;
+}
+/* for tag dav has id=Div3 element p , set font size*/
+div#Div3 p{
+    margin-top: 0;
+    font-size: 25px;
+} 
+/* Set color of hr and make it on (15$)*/
+div#Div4 hr{
+    position: absolute;
+    width: 40px;
+    padding: 1px;
+    border: 1px solid red;
+    background-color: red;
+    border-radius: 15px 15px 15px 15px;
+    margin-top: 10px;
+}
+/* for tag dav has id=Di4 , set color of (15$)*/
+div#Div4{
+    color: red;
+    font-size: 20px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    padding-left: 30%;
+}
+/* for tag dav has id=Div4 element p , set space */
+div#Div4 p{
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-left: 5px;
+}
+/* for tag dav has id=Div5, set font size ,space and set color (12$)*/
+div#Div5{
+    color: blue;
+    font-size: 20px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    padding-left: 5%;
+}
+/* for tag dav has id=Div5 element p , - margin*/
+div#Div5 p{
+    margin-top: 0 ;
+    margin-bottom: 0;
+}
+/* for tag p has id=p1 , set space*/
+p#p1{
+    padding-left: 5%;
+    padding-bottom: 30%;
+    margin-bottom: 0;
+}
+/* for tag span has class=Classcart , set space*/
+span.Classcart{ 
+    padding-left: 3%;
+}
+/* for tag span has class=Classcart element i , move icon into input box*/
+span.Classcart i{
+    position: relative;
+    left: 4%;
+    color: black;
+}
+/* for tag span has class=Classcart element input , set space ,border and color*/
+span.Classcart input{
+    padding-left: 4%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    padding-right: 4%;
+    border: 2px solid black;
+    font-style: oblique;
+    font-size: 15px;
+    background-color: white;
+}
+/* for tag p has id=p2 , set space*/
+p#p2{
+    padding-left: 5%;
+    padding-top: 5%;
+}
+/* for tag p has id=p2 element span , set space and background color of (Male T-shirt and Single Color)*/
+p#p2 span{
+    margin-right: 10%;
+    border-radius: 20%;
+    padding: 2%;
+    background-color: rgb(178, 179, 180);
+}
+/* for tag dav has class=Div6 element p , set border and background color of img*/
+div.Div6{
+    background-color: white;
+    border: 5px solid rgb(112, 206, 235) ;
+    padding: 2%;
+}
+/* for tag dav has class=Div6 element i , set size of icon*/
+div.Div6 i{
+   font-size: 50px;
+}
+/* for tag dav has class=Div6 element p , set size*/
+div.Div6 p{
+    margin-top: 0;
+    margin-bottom: 10px;
+    padding-left: 10px;
+    font-size: 19px;
+}
+/* for tag dav has class=Div7 , to display inline*/
+div.Div7{
+    display: inline-block;
+}
+/* for tag p has id=p3 , set color of (Anonymous) */
+p#p3{
+    color: blue;
+}
+/* for tag p has id=p4, set color of (Today 4:21pm - 12.06.2020) */
+p#p4{
+    color: silver;
+}
+/* for tag p has id=p5, set top space*/
+p#p5{
+    padding-top: 2%;
+}
+/* for tag td has id=Td8,set top space */
+td#Td8{
+    padding-top: 20px;
+}
+/* for tag form has class=form1 , set top space*/
+form.form1{
+    padding-bottom: 20px;
+}
+/* for tag form has class=form1 element fieldset , to make bigger*/
+form.form1 fieldset{
+    height: 100px;
+}
+/* for tag div has class=Div8 , display inline , and make them to right of table*/
+div.Div8{
+    display: flex;
+    flex-direction: row-reverse;
+    padding-bottom: 2%;
+}
+/* for tag div has class=Div8 elment button, set space */
+div.Div8 button{
+    padding-left: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+/* for tag div has class=Div8 elment i, to make icon into box button*/
+div.Div8 i{
+    position: relative;
+    left: 25px;
+}
+/* for tag button has id=Button1, change background color and color of (Send)*/
+button#Button1{
+    background-color: rgb(35, 114, 233);
+    color: white;
+}
+/* for tag i has id=Icon1 , change color to white*/
+i#Icon1{
+    color: white;
+}
