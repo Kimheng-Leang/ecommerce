@@ -1,0 +1,21 @@
+.display-flex{
+    display: flex;
+    justify-content: space-between;
+}
+.display-col{
+    display:flex;
+    flex-direction: column;
+}
+.row>div{
+    border-right: 2px solid;
+    display: flex;
+    align-items: center;
+    padding: 1%;
+}
+.col-sm-1>img{
+    width: 100%;
+}
+.row-sm-2>button{
+    border: 2px solid;
+}
+

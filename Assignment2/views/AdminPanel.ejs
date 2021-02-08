@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<link rel="stylesheet" href="../assets/fonts/fontawesome/css/all.css">
+<link rel="stylesheet" href="assets/css/Validation.css">
+<body>
+    <div class="jumbotron">
+        <div class="container">
+            <div class="display-flex " style="padding-bottom: 4rem;">
+                <b><pre>Awesome Shop | Admin Panel</pre></b>
+                <div class="display-flex">
+                    <b><a href="http://localhost:4000" style="text-decoration: underline;">Home</a>  |</b>
+                    <form action="http://localhost:4000/admin/logout" style="padding-left: 4px;" method="POST">
+                        
+                        <button type="submit" style="border: none;background: none;padding: 0;color:#007bff;text-decoration: underline;"><b>Log Out</b></button>
+                    </form>
+                </div>
+            </div>
+            <div class="display-flex">
+                <div class="col-sm-2" style="padding-right: 0;">
+                    <div class="row-sm-2" style="padding-top: 50px;">
+                        <button type="submit" class="btn btn-light form-control text-left" onclick="Product()"><b>Products</b></button>
+                        
+                    </div>
+                    <div class="row-sm-2">
+                        <button type="submit" class="btn btn-light form-control text-left" onclick="Users()"><b>User</b></button>
+                    </div>
+                    <div class="row-sm-2">
+                        <button type="submit" class="btn btn-light form-control text-left" onclick="PurchaseOrder()"><b>Purchase Order</b></button>
+                    </div>
+                    <div class="row-sm-2">
+                        <button type="submit" class="btn btn-light form-control text-left" onclick="History()"><b>History</b></button>
+                    </div>
+                </div>
+                <div style="border: 2px solid;padding:2%;background-color: white;" class="col-sm-10" id="Layout">
+                    <form action="http://localhost:4000/admin/addProduct" method="POST" id="formProduct" enctype="multipart/form-data">
+                        <div class="display-flex" style="padding-bottom: 2rem;">
+                            <b id="Detail">All Product in stock</b>
+                            <button type="submit" class="btn btn-info" id="btn" >Add Product</button>
+                        </div>
+                        <div style="border: 2px solid;border-right: none;">
+                            <div class="row" style="margin:0%;background-color:rgb(189, 189, 189);" id="innerLayout">
+                                <div class="col-sm-1"  >
+
+                                </div>
+                                <div class="col-sm-2 display-flex" id="col-sm-2">
+                                    <b id="Name">Name</b>
+                                    <b><i class="fa fa-caret-up" aria-hidden="true"></i></b>
+                                </div>
+                                <div class="col-sm-1 display-flex" >
+                                    <b>Qty</b>
+                                    <div>
+                                        <b class="display-col"><i class="fa fa-caret-up" aria-hidden="true"></i><i class="fa fa-caret-down" aria-hidden="true"></i></b>
+                                    </div>
+                                </div>
+                                <div class="col-sm-3"  >
+                                    <b>Detail</b>
+                                </div>
+                                <div class="col-sm-2 display-flex" >
+                                    <b>Instock At</b>
+                                    <b><i class="fa fa-caret-up" aria-hidden="true"></i></b>
+                                </div>
+                                <div class="col-sm-2"  >
+                                    <b>Category</b>
+                                </div>
+                                <div class="col-sm-1"  >
+                                    <b>Action</b>
+                                </div>
+                                <!-- <div class="col-sm-1"  >
+                                    
+                                </div>
+                                <div class="col-sm-2 display-flex" id="col-sm-2">
+                                    <b id="Name">Username</b>
+                                    <b><i class="fa fa-caret-up" aria-hidden="true"></i></b>
+                                </div>
+                                <div class="col-sm-4"  >
+                                    <b>Email</b>
+                                </div>
+                                <div class="col-sm-4 display-flex" >
+                                    <b>RegisterAt</b>
+                                    <b><i class="fa fa-caret-up" aria-hidden="true"></i></b>
+                                </div>
+                                <div class="col-sm-1"  >
+                                    <b>Action</b>
+                                </div> -->
+                            </div>
+                            <div id="getData"></div>
+                            <div class="row" style="margin:0%;background-color:rgb(226, 222, 222);" id="formInput">
+                                <div class="col-sm-1"  >
+                                    <input type="file" name="image">
+                                </div>
+                                <div class="col-sm-2" >
+                                    <textarea  class="form-control-sm" name="productName" id="input1"  rows="1" placeholder="Write here"></textarea>
+                                </div>
+                                <div class="col-sm-1 " >
+                                    <textarea  class="form-control-sm" name="Quantity" id="input2"  rows="1" placeholder="..."></textarea>
+                                </div>
+                                <div class="col-sm-3" >
+                                    <textarea  class="form-control-sm" name="Detail" id="input3"  rows="1" placeholder="Write here"></textarea>
+                                </div>
+                                <div class="col-sm-2" >
+                                    
+                                </div>
+                                <div class="col-sm-2">
+                                    <textarea  class="form-control-sm" name="Category" id="input4"  rows="1" placeholder="Write here"></textarea>
+                                </div>
+                                <div class="col-sm-1 display-flex" >
+                                    <!-- <b><i class="fa fa-wrench" aria-hidden="true"></i></b>
+                                    <b><i class="fa fa-trash" aria-hidden="true"></i></b> -->
+                                </div>
+                            </div>
+                            <!-- <div class="row" style="margin:0%;background-color:rgb(226, 222, 222);">
+                                <div class="col-sm-1"  >
+                                    <img src="../assets/images/icon_bag-front-view.png" alt="">
+                                </div>
+                                <div class="col-sm-2" >
+                                    <b>Hang Bag</b>
+                                </div>
+                                <div class="col-sm-1 " >
+                                    <b>40</b>
+                                </div>
+                                <div class="col-sm-3" >
+                                    <b>Hand back for ladies</b>
+                                </div>
+                                <div class="col-sm-2" >
+                                    <b>22nd, Jan 2021</b>
+                                </div>
+                                <div class="col-sm-2">
+                                    <b>Bag</b>
+                                </div>
+                                <div class="col-sm-1 display-flex" >
+                                    <b><i class="fa fa-wrench" aria-hidden="true"></i></b>
+                                    <b><i class="fa fa-trash" aria-hidden="true"></i></b>
+                                </div>
+                            </div>
+                            <div class="row" style="margin:0%;background-color:white;">
+                                <div class="col-sm-1"  >
+                                    <img src="../assets/images/icon_clothes.png" alt="">
+                                </div>
+                                <div class="col-sm-2" >
+                                    <b>T-Shirt</b>
+                                </div>
+                                <div class="col-sm-1 " >
+                                    <b>38</b>
+                                </div>
+                                <div class="col-sm-3" >
+                                    <b>Long sleve T-Shirt</b>
+                                </div>
+                                <div class="col-sm-2" >
+                                    <b>10th, Jan 2021</b>
+                                </div>
+                                <div class="col-sm-2">
+                                    <b>Clothes</b>
+                                </div>
+                                <div class="col-sm-1 display-flex" >
+                                    <b><i class="fa fa-wrench" aria-hidden="true"></i></b>
+                                    <b><i class="fa fa-trash" aria-hidden="true"></i></b>
+                                </div>
+                            </div>
+                            <div class="row" style="margin:0%;background-color:rgb(226, 222, 222);;">
+                                <div class="col-sm-1"  >
+                                    <img src="../assets/images/icon_wallet.png" alt="">
+                                </div>
+                                <div class="col-sm-2" >
+                                    <b>Wallet</b>
+                                </div>
+                                <div class="col-sm-1 " >
+                                    <b>41</b>
+                                </div>
+                                <div class="col-sm-3" >
+                                    <b>Leather bag</b>
+                                </div>
+                                <div class="col-sm-2" >
+                                    <b>06th, Jan 2021</b>
+                                </div>
+                                <div class="col-sm-2">
+                                    <b>Bag</b>
+                                </div>
+                                <div class="col-sm-1 display-flex" >
+                                    <b><i class="fa fa-wrench" aria-hidden="true"></i></b>
+                                    <b><i class="fa fa-trash" aria-hidden="true"></i></b>
+                                </div>
+                            </div>
+                            <div class="row" style="margin:0%;background-color:white;">
+                                <div class="col-sm-1"  >
+                                    <img src="../assets/images/icon_laptop.png" alt="">
+                                </div>
+                                <div class="col-sm-2" >
+                                    <b>Computer Dell 2320</b>
+                                </div>
+                                <div class="col-sm-1 " >
+                                    <b>20</b>
+                                </div>
+                                <div class="col-sm-3" >
+                                    <b>Laptop computers</b>
+                                </div>
+                                <div class="col-sm-2" >
+                                    <b>2nd, Jan 2021</b>
+                                </div>
+                                <div class="col-sm-2">
+                                    <b>Electronic</b>
+                                </div>
+                                <div class="col-sm-1 display-flex" >
+                                    <b><i class="fa fa-wrench" aria-hidden="true"></i></b>
+                                    <b><i class="fa fa-trash" aria-hidden="true"></i></b>
+                                </div>
+                            </div> -->
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="assets/js/admin.js"></script>
+</body>
+</html>

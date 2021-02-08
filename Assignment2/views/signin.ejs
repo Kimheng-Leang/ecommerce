@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Shopping</title>
+</head>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<link rel="stylesheet" href="../assets/fonts/fontawesome/css/all.css">
+<link rel="stylesheet" href="assets/css/Validation.css">
+<body>
+    <div class="jumbotron" style="padding-bottom: 0;">
+        <form action="http://localhost:4000/login" method="POST">
+            <div class="container" style="padding-left: 20%;padding-right: 20%;">
+                <div style="padding:5%;border: 2px solid;">
+                    <div class=" text-center">
+                        <h3>Welcome to Awesome Shop</h3>
+                        <br>
+                        <pre class="text-muted">Enter your email address and password to <br>access to continue</pre>
+                        <br>
+                    </div>
+                    <div class="form-group" style="">
+                        <div class="display-flex">
+                            <label for="inputdefault">Email address</label>
+                            <% if(err) {%>
+                                <span style="color: red;" ><%= emailMessage %></span>
+                            <% } %>
+                        </div>
+                        
+                        <input class="form-control" type="email" placeholder="example@gmail.com" name="email">
+                    </div>
+                    <div class="form-group">
+                        <div class="display-flex">
+                            <label for="inputdefault">Password</label>
+                            <% if(err) {%>
+                                <span style="color: red;" ><%= message %></span>
+                            <% } %>
+                        </div>
+                        <input class="form-control" type="password" name="password">
+                    </div>
+                    <div class="form-group">
+                        <br>
+                        <button type="submit" class="btn btn-info form-control">Log in</button>
+                    </div>
+                </div>
+                <div class=" text-center">
+                    <br>
+                    <p class="text-muted">Don't have an account? <b><a href="http://localhost:4000/signup" style="text-decoration: underline;padding-left: 5px;"> Sign Up</a></b></p>
+                </div>
+                <div class=" text-center">
+                    <br>
+                    <pre>2021  <i class="fa fa-copyright" aria-hidden="true"></i>  Awesomeshop by Hea Heng</pre>
+                </div>
+            </div>
+        </form>
+    </div>
+    <script src="assets/js/Validation.js"></script>
+</body>
+</html>
