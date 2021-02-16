@@ -267,3 +267,15 @@ span.Classcart input{
     font-family: Georgia, 'Times New Roman', Times, serif;
     padding: 1%;
 }
+.cart{
+    position: fixed;
+    bottom: 0;
+}
+.cart i{
+    color: rgb(243, 243, 245);
+    font-size: 2rem;
+}
+.cart button{
+    background-color: rgb(240, 70, 70);
+    
+}

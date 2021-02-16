@@ -14,7 +14,6 @@ const controller = require('../controllers/controller')
 //     res.render('Productpage')
 // })
 router.get('/',controller.Homepage);
-router.get('/Productpage',controller.Productpage);
 router.get('/signin',controller.signin);
 router.get('/signup',controller.signup);
 router.get('/admin',controller.admin);
@@ -25,7 +24,13 @@ router.post("/register",controller.register);
 //login
 router.post('/login',controller.login);
 //router.post('/admin',controller.admin);
-router.post('/Purchase',controller.purchase);
+//for view detail product
+router.post('/Productpage*',controller.Productpage);
+//for add cart
+router.post('/addCart',controller.addCart);
+//router.post('/Purchase*',controller.purchase);
+router.post('/Purchase/:productID',controller.purchase);
+
 //admin can add product
 router.post('/admin/addProduct',controller.addProduct);
 //Get all products from database
@@ -38,6 +43,8 @@ router.delete('/admin/:productID',controller.Delete)
 router.get('/admin/:productID',controller.getOneProduct);
 //Update product
 router.patch('/admin/:productID',controller.editProduct);
+
+//router.get('/Productpage/:productID',controller.Productpage);
 //User post comment
 router.post('/Productpage/postComment',controller.postComment);
 //Get comments from DB
@@ -46,5 +53,11 @@ router.get('/Productpage/postComments',controller.getComments);
 router.post('/admin/logout',controller.logout)
 
 router.get('/getProducts',controller.getProducts);
+
+router.get('/:productID',controller.getOneProduct);
+
+
+
+
 //router.get('/Productpage',controller.postComment);
 module.exports=router;

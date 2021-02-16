@@ -6,6 +6,7 @@
     <title>Online Shopping</title>
     <link rel="stylesheet" href="../assets/fonts/fontawesome/css/all.css">
     <link rel="stylesheet" href="../assets/css/Homepage.css">
+    
 </head>
 <body>
     <table id="layout">
@@ -65,6 +66,11 @@
                             <div>
                                 <img src="../assets/images/icon_clothes.png" alt="Clothes"><h3>Clothes</h3>
                             </div>
+                            <% if(cart){%>
+                            <div class="cart">
+                                <button type="button"><i class="fas fa-shopping-cart"></i></button>
+                            </div>
+                            <% } %>
                         </td>
                         <td id="Td4">
                             <table id="layout2">
@@ -160,13 +166,14 @@
                                             </div>
                                         </td>
                                     </tr> -->
-                                    <tr>
+
+                                    <!-- <tr>
                                         <td id="Td6">
                                             
                                             <span>Learn more</span>
 
                                         </td>
-                                    </tr>
+                                    </tr> -->
                             </table>
                             
                         </td>
@@ -176,7 +183,7 @@
         </tr>
     </table>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script src="assets/js/Validation.js"></script>
-    <script src="assets/js/user.js"></script>
+    
+    <script src="assets/js/Homepage.js"></script>
 </body>
 </html>

@@ -7,7 +7,7 @@
 </head>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 <link rel="stylesheet" href="../assets/fonts/fontawesome/css/all.css">
-<link rel="stylesheet" href="assets/css/Validation.css">
+<link rel="stylesheet" href="assets/css/index.css">
 <body>
     <div class="jumbotron" style="padding-bottom: 0;">
         <form action="http://localhost:4000/register" method="POST">
@@ -38,8 +38,10 @@
                     <div class="form-group">
                         <div class="display-flex">
                             <label for="inputdefault">Password</label>
-                            
                             <span class="error_pw"></span>
+                            <% if(errPw) {%>
+                                <span style="color: red;" ><%= errPwMessage %></span>
+                            <% } %>
                         </div>
                         <input class="form-control" type="password" onchange="validationPw(event) " id="pw" name="password" value="<%= password %>" required >
                     </div>

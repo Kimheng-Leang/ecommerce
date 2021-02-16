@@ -3,7 +3,8 @@ const bcrypt= require('bcryptjs');
 const admin = require('../models/admin');
 const product = require('../models/postProduct');
 const comment= require('../models/userComment');
-const { patch } = require('../routes/admin');
+const addCart= require('../models/addCart')
+
 exports.signin=(req,res)=>{
     if(!req.session.userId){
         res.render('signin',{err:false});
@@ -21,15 +22,19 @@ exports.signup=(req,res)=>{
             password:"",
             confirm_password:"",
             err:false,
-            errCheckBox:false});
+            errCheckBox:false,
+            errPw:false});
     }
 }
 exports.Homepage=(req,res)=>{
-    res.render('Homepage')
+    res.render('Homepage',{
+        cart:false
+    })
     
 }
 exports.Productpage=(req,res)=>{
     res.render('Productpage')
+    
 }
 exports.register= (req,res)=>{
     //if it's not work go to file ejs, create form oy them
@@ -41,7 +46,7 @@ exports.register= (req,res)=>{
     console.log(checkBox);
     const salt = bcrypt.genSaltSync(10);
     const date = new Date();
-    if(checkBox&&username!=null&&password!=null&&confirm_password!=null&&email!=null&&password==confirm_password){
+    if(checkBox&&password==confirm_password){
         //console.log(checkBox);
         user.find({email:email}).then(result=>{
             console.log(result);
@@ -53,6 +58,7 @@ exports.register= (req,res)=>{
                     confirm_password:confirm_password,
                     err:true,
                     errCheckBox:false,
+                    errPw:false,
                     errEmail:"Email address is already exist!"})
             }
             else{
@@ -82,7 +88,20 @@ exports.register= (req,res)=>{
                 confirm_password:confirm_password,
                 err:false,
                 errCheckBox:true,
+                errPw:false,
                 message:"Checkbox are required!"
+            })
+        }
+        else{
+            res.render('signup',{
+                username:username,
+                email:email,
+                password:password,
+                confirm_password:confirm_password,
+                err:false,
+                errCheckBox:false,
+                errPw:true,
+                errPwMessage:"Password & Confirm Password must be match!"
             })
         }
     }
@@ -135,23 +154,39 @@ exports.login=(req,res)=>{
 }
 exports.purchase=(req,res)=>{
     const purchase = req.body.purchase;
+    const productID = req.params.productID;
     console.log(purchase);
     if(purchase!==null){
-        console.log(req.session.userId);
+        //console.log(req.session.userId);
         if(!req.session.userId){
-            res.redirect('signin')
+            res.redirect('/signin')
         }
         else{
-            res.redirect('Productpage')
+            // res.render('addCart');
+            product.findById(productID).then(result=>{
+                console.log(result);
+                res.render('addCart',{
+                    result:result,
+                    
+                });
+            }).catch(err=>{
+                console.log(err);
+            })
+            
         }
     }
 }
 exports.admin=(req,res)=>{
-    res.render('AdminPanel')
     
+    if(req.session.userId){
+        boolen=false;
+        res.render('AdminPanel');
+    }
+    else{
+        res.send("Permission denied");
+    }
 }
 exports.logout=(req,res)=>{
-    console.log("connect");
     req.session.destroy();
     res.redirect('/signin');
 }
@@ -224,7 +259,7 @@ exports.Delete=(req,res)=>{
 exports.getOneProduct=(req,res)=>{
     const productID=req.params.productID;
     product.findById(productID).then(result=>{
-        res.json(result)
+        res.json(result);
     }).catch(err=>{
         console.log(err);
     })
@@ -278,6 +313,38 @@ exports.getComments=(req,res)=>{
         console.log(err);
     })
 }
+exports.addCart=(req,res)=>{
+    res.render('Homepage',{
+        cart:true
+    })
+    // const productName=req.body.productName;
+    // const Price=req.body.Price;
+    // const Color=req.body.Color;
+    // const Size = req.body.Size;
+    // const Quantity= req.body.Quantity;
+    // const Total= req.body.Total;
+    // console.log(productName);
+    // const Cart = new addCart({
+    //     userName:req.session.userName,
+    //     productName:productName,
+    //     Price:Price,
+    //     Color:Color,
+    //     Size:Size,
+    //     Quantity:Quantity,
+    //     Total:Total
+    // }).save().then(result=>{
+        
+    //     res.render('Homepage',{
+    //         cart:true
+    //     })
+    // }).catch(err=>{
+    //     console.log(err);
+    // })
+    
+}
+// exports.addCart=(req,res)=>{
+//     res.render('addCart')
+// }
 //for create admin, i have created admin by post man
 // exports.admin=(req,res)=>{
 //     const adminName=req.body.adminName;

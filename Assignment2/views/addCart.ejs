@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Cart</title>
+</head>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<link rel="stylesheet" href="../assets/fonts/fontawesome/css/all.css">
+<link rel="stylesheet" href="../assets/css/index.css">
+<body>
+    <div class="jumbotron">
+        <div class="container" style="padding-left: 20%;padding-right: 20%;">
+            <div style="padding:5%;border: 2px solid;">
+                
+                <div class="form-group text-center" id="img" >
+                    <img src="<%= result.Path %>" alt="" style="width: 30%;">
+                </div>
+                <div class="form-group">
+                    <div style="display: flex;">
+                        Product Name:
+                        <div name=productName>
+                            <%= result.productName %>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="form-group">
+                    <div style="display: flex;">
+                        Price:
+                        <div name="Price">
+                            $12 
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="form-group">
+                        Color:
+                        <select class="form-select" aria-label="Default select example" name="Color">
+                            <option selected>White</option>
+                            <option value="1">Black</option>
+                            <option value="2">Yellow</option>
+                            <option value="3">Red</option>
+                        </select>
+                </div>
+                <div class="form-group">
+                    Size:
+                    <select class="form-select" aria-label="Default select example" name="Size">
+                        <option selected>M</option>
+                        <option value="1">S</option>
+                        <option value="1">L</option>
+                        <option value="1">XL</option>
+                    </select>
+                </div>
+                <div class="form-group ">
+                    <div style="display: flex;">
+                        Quantity:
+                        <div class="input-group">
+                            <span >
+                                <button  type="button" id="plus" class="btn-sm btn-danger" onclick="Minus()"><i class="fa fa-minus" aria-hidden="true"></i></button>
+                            </span>
+                            <input class="input-number sm" type="text" name="Quantity" id="value" value="1" style="width: 5%;">
+                            <span >
+                                <button type="button" id="minus" class="btn-sm btn-success" onclick="Plus()"><i class="fa fa-plus" aria-hidden="true"></i></button>
+                            </span>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="form-group">
+                    Total:
+                    <span id="total" name="Total">$12</span>
+                    
+                </div>
+                <div class="text-center form-group">
+                    <form action="http://localhost:4000/addCart" method="POST">
+                    <button type="submit" class="btn btn-info">Add Cart</button>
+                </form>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="../assets/js/addCart.js"></script>
+</body>
+</html>
