@@ -1,3 +1,0 @@
- 	Create home page and product page with html and css
-	Link(Github):https://github.com/Kimheng-Leang/ecommerce.git
-	Branch:assignment_1

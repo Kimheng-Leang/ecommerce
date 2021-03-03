@@ -31,7 +31,7 @@ app.use(session({
 }))
 
 app.use(router);
-mongoose.connect('mongodb://localhost:27017/Product?readPreference=primary&appname=MongoDB%20Compass&ssl=false') // I use local mongoose
+mongoose.connect('mongodb+srv://user1:m799AMMI2OElZanu@cluster0.ryg4g.mongodb.net/Product?retryWrites=true&w=majority') // I use local mongoose
 .then(result=>{
     console.log("DB is connected");
     app.listen(port)
